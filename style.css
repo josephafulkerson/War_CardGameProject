@@ -48,3 +48,14 @@ hr {
 #form {
     margin-top: 8%;
 }
+
+p {
+    margin-left: 60%;
+    margin-top: -1%;
+    margin-right: 2%;
+}
+
+#Instructions {
+    color: maroon;
+    margin-top: -3%;
+}

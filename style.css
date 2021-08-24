@@ -59,3 +59,7 @@ p {
     color: maroon;
     margin-top: -3%;
 }
+
+#card {
+    border-radius: 10px;
+}

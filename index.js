@@ -20,6 +20,8 @@ grab.addEventListener('submit', e => {
     const playerCard = document.querySelector('#playerCard')
 
     const dealCard = document.querySelector('#sqr')
+    let botCounter = 0
+    let playerCounter = 0
     dealCard.addEventListener('click', event => {
         fetch(`https://deckofcardsapi.com/api/deck/${deck_ID}/draw/?count=2`)
         .then(resp => resp.json())
@@ -30,10 +32,38 @@ grab.addEventListener('submit', e => {
             //game logic
             let botHitMe = (data.cards[0].value)
             let playerHitMe = (data.cards[1].value)
-
-            let botScore = document.querySelector('#botScore')
-            botScore.textContent = for (let i=0; i<=26; i++){
+            const cardFacetoValue = {
+                'ACE': 14,
+                'KING': 13,
+                'QUEEN': 12,
+                'JACK': 11,
+                '10': 10,
+                '9': 9,
+                '8': 8,
+                '7': 7,
+                '6': 6,
+                '5': 5,
+                '4': 4,
+                '3': 3,
+                '2': 2
+            }
+            cardFacetoValue[botHitMe]
+            cardFacetoValue[playerHitMe]
+            if (botHitMe > playerHitMe) {
+               botCounter++
+            } else if (playerHitMe > botHitMe) {
+                playerCounter++
+            } else if (playerHitMe === botHitMe) {
 
             }
+            const newScoreBot = document.querySelector('#botScore')
+            const newScorePlayer = document.querySelector('#playerScore')
+            newScoreBot.textContent = botCounter
+            newScorePlayer.textContent = playerCounter
+
+            // let botScore = document.querySelector('#botScore')
+            // botScore.textContent = for (let i=0; i<=26; i++){
+
+        
         })
         })

@@ -5,7 +5,7 @@
         <title>Beat the Bot!</title>
     </head>
     <body>
-        <h1>Beat the Bot</h1>
+        <h1>Beat the Bot!</h1>
         <p id='Instructions'>Welcome to the card game 'WAR'</p>
         <p>The goal is to score more points than your opponent. The dealer!
             At the start, 2 cards will be drawn every round. 
@@ -24,12 +24,16 @@
         <div id='sqr'>
             <img id = 'card' src="./card2.png" width= '110px' height="150px">
         </div>
-        <div id ='sqr2'></div>
+        <div id ='sqr2'>
+            <img id="botCard" width= '110px' height="150px">
+        </div>
         <hr>
-        <div id='sqr3'></div>
+        <div id='sqr3'>
+            <img id="playerCard" width= '110px' height="150px">
+        </div>
         <p id='nameInput'></p>
         <form id='form'>
-            <label>Name:</label>
+            <label>Player Name:</label>
             <input type = 'text' id='name' name='User Name'>
             <button id='bttn' type='submit'>Enter</button>
         </form>

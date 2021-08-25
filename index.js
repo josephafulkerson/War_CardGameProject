@@ -1,16 +1,20 @@
 fetch('https://deckofcardsapi.com/api/deck/new/draw/?count=52')
 .then(resp => resp.json())
-.then(data =>console.log(data))
+.then(data => {
+    
+})
 
 // First thing -> player types in name
-e.preventDefault()
-
-grabValue.addEventListener('submit', e => {
-    const grabPlayer = document.querySelector('#nameInput')
+const grab = document.querySelector('#form')
+grab.addEventListener('submit', e => {
+    e.preventDefault();
     const grabValue = document.querySelector('#name')
-    //const grabBttn = document.querySelector('#bttn')
-    grabPlayer.innerHTML = grabValue
+    const grabPlayer = document.querySelector('#nameInput')
+    const grabBttn = document.querySelector('#bttn')
+    grabPlayer.textContent=grabValue.value
 })
+
+//populate cards
 
 
 
@@ -19,6 +23,7 @@ grabValue.addEventListener('submit', e => {
 // const putNameHere = document.querySelector('#nameInput')
 // getName.addEventListener('submit', event => {
 //     event.preventDefault()
-
-
 // })
+
+// have cards populate
+//create click event that 'deals' cards

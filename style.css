@@ -53,11 +53,14 @@ p {
     margin-left: 60%;
     margin-top: -1%;
     margin-right: 2%;
+    font-size: 20px;
+    color: white;
 }
 
 #Instructions {
     color: maroon;
     margin-top: -3%;
+    font-size: 23px;
 }
 
 #card {

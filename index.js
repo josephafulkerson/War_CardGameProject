@@ -30,8 +30,8 @@ grab.addEventListener('submit', e => {
             botCard.src = data.cards[0].image
             playerCard.src = data.cards[1].image
             //game logic
-            let botHitMe = (data.cards[0].value)
-            let playerHitMe = (data.cards[1].value)
+            const botHitMe = (data.cards[0].value)
+            const playerHitMe = (data.cards[1].value)
             const cardFacetoValue = {
                 'ACE': 14,
                 'KING': 13,
@@ -60,9 +60,6 @@ grab.addEventListener('submit', e => {
             const newScorePlayer = document.querySelector('#playerScore')
             newScoreBot.textContent = botCounter
             newScorePlayer.textContent = playerCounter
-
-            // let botScore = document.querySelector('#botScore')
-            // botScore.textContent = for (let i=0; i<=26; i++){
 
         
         })

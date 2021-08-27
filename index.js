@@ -49,14 +49,24 @@ grab.addEventListener('submit', e => {
                 '3': 3,
                 '2': 2
             }
-            cardFacetoValue[botHitMe]
-            cardFacetoValue[playerHitMe]
-            if (botHitMe > playerHitMe) {
-               botCounter++
-            } else if (botHitMe < playerHitMe) {
-                playerCounter++
-            } else if (botHitMe === playerHitMe) {
+            // cardFacetoValue[botHitMe]
+            // cardFacetoValue[playerHitMe]
+            // switch(cardFacetoValue) {
+            //     case (botHitMe > playerHitMe): 
+            //         botCounter ++;
+            //         break;
+                
+            //     case (botHitMe < playerHitMe):
+            //         playerCounter++;
+            //         break;
 
+            //     case (botHitMe === playerHitMe):
+            //         break;  
+            // }
+            if (cardFacetoValue[botHitMe] > cardFacetoValue[playerHitMe]) {
+               botCounter++
+            } else if (cardFacetoValue[botHitMe] < cardFacetoValue[playerHitMe]) {
+                playerCounter++
             }
             const newScoreBot = document.querySelector('#botScore')
             const newScorePlayer = document.querySelector('#playerScore')

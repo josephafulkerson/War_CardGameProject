@@ -1,10 +1,11 @@
+document.addEventListener('DOMContentLoaded', () => {
+
 let deck_ID = ''
-fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
+const loadAPI = fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
 .then(resp => resp.json())
 .then(data =>  {
     deck_ID = data.deck_id
 })
-
 // First thing -> player types in name
 const grab = document.querySelector('#form')
 grab.addEventListener('submit', e => {
@@ -32,6 +33,7 @@ grab.addEventListener('submit', e => {
             //game logic
             const botHitMe = (data.cards[0].value)
             const playerHitMe = (data.cards[1].value)
+
             const cardFacetoValue = {
                 'ACE': 14,
                 'KING': 13,
@@ -51,9 +53,9 @@ grab.addEventListener('submit', e => {
             cardFacetoValue[playerHitMe]
             if (botHitMe > playerHitMe) {
                botCounter++
-            } else if (playerHitMe > botHitMe) {
+            } else if (botHitMe < playerHitMe) {
                 playerCounter++
-            } else if (playerHitMe === botHitMe) {
+            } else if (botHitMe === playerHitMe) {
 
             }
             const newScoreBot = document.querySelector('#botScore')
@@ -64,3 +66,4 @@ grab.addEventListener('submit', e => {
         
         })
         })
+})

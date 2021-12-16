@@ -6,6 +6,8 @@ const loadAPI = fetch('https://deckofcardsapi.com/api/deck/new/shuffle/?deck_cou
 .then(data =>  {
     deck_ID = data.deck_id
 })
+
+
 // First thing -> player types in name
 const grab = document.querySelector('#form')
 grab.addEventListener('submit', e => {
@@ -27,7 +29,7 @@ grab.addEventListener('submit', e => {
         fetch(`https://deckofcardsapi.com/api/deck/${deck_ID}/draw/?count=2`)
         .then(resp => resp.json())
         .then(data => {
-            //if ()
+          
             botCard.src = data.cards[0].image
             playerCard.src = data.cards[1].image
             //game logic
@@ -49,31 +51,36 @@ grab.addEventListener('submit', e => {
                 '3': 3,
                 '2': 2
             }
-            // cardFacetoValue[botHitMe]
-            // cardFacetoValue[playerHitMe]
-            // switch(cardFacetoValue) {
-            //     case (botHitMe > playerHitMe): 
-            //         botCounter ++;
-            //         break;
-                
-            //     case (botHitMe < playerHitMe):
-            //         playerCounter++;
-            //         break;
-
-            //     case (botHitMe === playerHitMe):
-            //         break;  
-            // }
+       
             if (cardFacetoValue[botHitMe] > cardFacetoValue[playerHitMe]) {
                botCounter++
             } else if (cardFacetoValue[botHitMe] < cardFacetoValue[playerHitMe]) {
                 playerCounter++
             }
+
+            console.log(botHitMe)
+
+
             const newScoreBot = document.querySelector('#botScore')
             const newScorePlayer = document.querySelector('#playerScore')
             newScoreBot.textContent = botCounter
             newScorePlayer.textContent = playerCounter
 
-        
+            function gameOver() {
+                if (botCounter > playerCounter){
+                    alert("Bot Wins! Refresh the page begin a new round")
+                }
+                else if (playerCounter > botCounter) {
+                    alert("You win! Refresh the page to begin a new round")
+                }
+                else {
+                    alert("Tie! Refresh the page to play again")
+                }
+            }
+            (data.remaining === 0 ? gameOver() : null)
         })
+
         })
 })
+
+

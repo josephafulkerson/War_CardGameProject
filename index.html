@@ -7,39 +7,40 @@
     </head>
     <body>
         <h1>Beat the Bot!</h1>
+        <div class="text">
         <p id='Instructions'>Welcome to the card game 'WAR'</p>
-        <p>The goal is draw a higher card than the bot.
-             2 cards will be drawn every round, and the highest value 
-             card will win that round and  be awarded one point.
-            After 52 cards have been drawn the game will end.
+        <p>The goal is draw a higher card than the bot. 2 cards will be drawn every round, and the highest value 
+             card will win that round and  be awarded one point. After 52 cards have been drawn the game will end.
             The player with the most points at the end will be the winner. 
             
             <strong>Instructions:</strong> 
-            Click on the Name to submit a name for your character. 
-            Click on the deck in the top left corner to draw. 
+            Click on the Name to submit a name for your player. Click on the deck in the top left corner to draw. 
             Keep an eye on your score to make sure the bot is playing fair!
              
             Ready, Set, WAR!</p>
-            <p id='War-Bot'>War Bot</p>
-        <div id='sqr'>
-            <img id = 'card' src="./card2.png" width= '110px' height="150px">
         </div>
-        <div id ='sqr2'>
-            <img id="botCard" width= '110px' height="150px">
+        <div class="game">
+                <p id='War-Bot'>War Bot</p>
+            <div id='sqr'>
+                <img id = 'card' src="./card2.png" width= '110px' height="150px">
+            </div>
+            <div id ='sqr2'>
+                <img id="botCard" width= '110px' height="150px">
+            </div>
+            <p id ='score1'>Score:</p>
+            <p id="botScore"></p>
+            <hr>
+            <div id='sqr3'>
+                <img id="playerCard" width= '110px' height="150px">
+            </div>
+            <p id = 'score2'>Score:</p>
+            <p id='playerScore'></p>
+            <p id='nameInput'></p>
+            <form id='form'>
+                <label>Player Name:</label>
+                <input type = 'text' id='name' name='User Name'>
+                <button id='bttn' type='submit'>Enter</button>
+            </form>
         </div>
-        <p id ='score1'>Score:</p>
-        <p id="botScore"></p>
-        <hr>
-        <div id='sqr3'>
-            <img id="playerCard" width= '110px' height="150px">
-        </div>
-        <p id = 'score2'>Score:</p>
-        <p id='playerScore'></p>
-        <p id='nameInput'></p>
-        <form id='form'>
-            <label>Player Name:</label>
-            <input type = 'text' id='name' name='User Name'>
-            <button id='bttn' type='submit'>Enter</button>
-        </form>
     </body>
 </html>
